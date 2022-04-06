@@ -1,0 +1,16 @@
+---
+- name: Sample Windows based module run
+  hosts: localhost
+  tasks:
+  - name: Call on module
+    win_module_example:
+      var1: "bingo"
+      var2: "eureka"
+      complex_var:
+        var3:
+          - var4: "flabbergast"
+          - var5: "cattywompas"
+    register: output_var
+
+  - debug:
+      msg: "{{ output_var }}"

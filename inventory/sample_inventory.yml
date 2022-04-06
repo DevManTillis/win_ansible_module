@@ -1,0 +1,23 @@
+all: # keys must be unique, i.e. only one 'hosts' per group
+  hosts:
+    test1:
+    test2:
+      host_var: value
+    host:
+      ansible_user: 
+      ansible_password: 
+      ansible_connection: winrm
+      ansible_winrm_server_cert_validation: ignore
+      ansible_host: 192.168.56.2
+      
+  vars:
+    group_all_var: value
+  children:   # key order does not matter, indentation does
+    other_group:
+      children:
+        group_x:
+          hosts:
+            group_y:
+              hosts:
+          vars:
+            g2_var2: value3
