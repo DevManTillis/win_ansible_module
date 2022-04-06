@@ -4,11 +4,11 @@ all: # keys must be unique, i.e. only one 'hosts' per group
     test2:
       host_var: value
     host:
-      ansible_user: 
-      ansible_password: 
+      ansible_user: Administrator
+      ansible_password: P@55w0rd!
       ansible_connection: winrm
       ansible_winrm_server_cert_validation: ignore
-      ansible_host: 192.168.56.2
+      ansible_host: 192.168.0.187
       
   vars:
     group_all_var: value

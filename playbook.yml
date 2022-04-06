@@ -1,6 +1,7 @@
 ---
 - name: Sample Windows based module run
-  hosts: localhost
+  hosts: host
+  gather_facts: no
   tasks:
   - name: Call on module
     win_module_example:
